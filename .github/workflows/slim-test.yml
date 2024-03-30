@@ -21,14 +21,13 @@ env:
   REPO_BRANCH: stable
   CONFIG_FILE: configs/lean/stable.config
   DIY_SH: scripts/lean.sh
-  CLASH_KERNEL: amd64
-
-  FIRMWARE_TAG: X86_64
+  KMODS_IN_FIRMWARE: true
+  UPLOAD_RELEASE: true
   TZ: Asia/Shanghai
-
+  
 jobs:
   Build:
-    runs-on: Ubuntu 20.04
+    runs-on: Ubuntu latest
     outputs:
       OPENWRTROOT: ${{ steps.update.outputs.OPENWRTROOT }}
       PLATFORM: ${{ steps.compile.outputs.PLATFORM }}
