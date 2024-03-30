@@ -30,7 +30,7 @@ env:
 
 jobs:
   Build:
-    runs-on: self-hosted
+    runs-on: linux
     outputs:
       OPENWRTROOT: ${{ steps.update.outputs.OPENWRTROOT }}
       PLATFORM: ${{ steps.compile.outputs.PLATFORM }}
