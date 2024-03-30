@@ -30,7 +30,7 @@ env:
 
 jobs:
   Build:
-    runs-on: linux
+    runs-on: Linux
     outputs:
       OPENWRTROOT: ${{ steps.update.outputs.OPENWRTROOT }}
       PLATFORM: ${{ steps.compile.outputs.PLATFORM }}
