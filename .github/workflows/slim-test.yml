@@ -22,15 +22,13 @@ env:
   CONFIG_FILE: configs/lean/stable.config
   DIY_SH: scripts/lean.sh
   CLASH_KERNEL: amd64
-  CACHE_TOOLCHAIN: true
-  UPLOAD_BIN_DIR: false
-  FIRMWARE_RELEASE: true
+
   FIRMWARE_TAG: X86_64
   TZ: Asia/Shanghai
 
 jobs:
   Build:
-    runs-on: Linux
+    runs-on: Ubuntu 20.04
     outputs:
       OPENWRTROOT: ${{ steps.update.outputs.OPENWRTROOT }}
       PLATFORM: ${{ steps.compile.outputs.PLATFORM }}
