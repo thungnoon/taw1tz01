@@ -1,4 +1,4 @@
-name:  OpenWrt-合集版
+name:  OpenWrt-slim
 
 on: 
   workflow_dispatch:
