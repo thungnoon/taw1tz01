@@ -29,7 +29,5 @@ sed -i '$a\src-git homeproxy https://github.com/immortalwrt/homeproxy' ./feeds.c
 # 9-添加 Nikki 插件
 echo "src-git nikki https://github.com/nikkinikki-org/OpenWrt-nikki.git;main" >> "feeds.conf.default"
 
-# 9-添加 Adguarehome插件
-echo 'src-git adguardhome https://github.com/kenzok8/openwrt-packages/tree/master/adguardhome' >>feeds.conf.default
 
 
