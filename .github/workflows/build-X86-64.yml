@@ -17,7 +17,7 @@ on:
   repository_dispatch:
   workflow_dispatch:
   schedule:
-   - cron: 0 20 */3 * *
+   - cron: 0 20 * * 4
    #      分,时,日,月,周。每周五 20时执行一次 (UTC时间)
   
 env:
@@ -195,7 +195,7 @@ jobs:
 
     - name: 整理文件
       id: organize
-      if: steps.compile.outputs.status == 'success'
+      if: steps.compile.outputs.status == 'success' && !cancelled()
       run: |
         cd openwrt/bin/targets/*/*
         rm -rf *.bin
@@ -222,7 +222,7 @@ jobs:
       if: env.UPLOAD_RELEASE == 'true' && steps.compile.outputs.status == 'success' && !cancelled()
       run: |
         VERSION1="${REPO_BRANCH#*-}"
-        echo -e "🎉 X86-64 平台\n✅ ${VERSION1} 源码\n❗️ ip地址 : 192.168.8.1" >> release.txt
+        echo -e "🎉 X86-64 平台\n✅ ${VERSION1} 源码\n❗️ ip地址 : 192.168.5.1" >> release.txt
         echo "release_tag=$(date +"%Y.%m.%d-${VERSION1}_X86-64")" >> $GITHUB_OUTPUT
         echo "status=success" >> $GITHUB_OUTPUT
 
