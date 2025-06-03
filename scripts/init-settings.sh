@@ -6,4 +6,5 @@ sed -i 's/192.168.1.1/192.168.5.1/g' package/base-files/files/bin/config_generat
 # 给config下的文件增加权限
 chmod 644 files/etc/config/*
 
+
 echo "init-settings executed successfully!"
