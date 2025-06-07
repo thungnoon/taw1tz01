@@ -104,7 +104,7 @@ jobs:
     - name: 空间使用情况2
       if: (!cancelled())
       run: df -hT
-
+      
     - name: 编译工具链
       id: mtools
       run: |
@@ -114,7 +114,7 @@ jobs:
         make tools/compile -j$(($(nproc)+1)) || make tools/compile -j1 V=s
         make toolchain/compile -j$(($(nproc)+1)) || make toolchain/compile -j1 V=s
         echo "status=success" >> $GITHUB_OUTPUT
-
+        
     - name: 空间使用情况3_1
       if: (!cancelled())
       run: df -hT
