@@ -1,4 +1,4 @@
-﻿# 启用 IGMP 代理支持（用于转发组播流到 LAN）
+# 启用 IGMP 代理支持（用于转发组播流到 LAN）
 CONFIG_PACKAGE_igmpproxy=y
 
 # 内核模块：支持 IGMP Proxy 所需的 netfilter 组件
