@@ -53,7 +53,7 @@ git clone -b main --depth 1 https://github.com/linkease/istore-ui.git
 git clone --depth 1 https://github.com/nikkinikki-org/OpenWrt-nikki.git
 
 # #fchomo 
-git clone -b master --depth 1 https://github.com/fcshark-org/openwrt-fchomo.git
+# git clone -b master --depth 1 https://github.com/fcshark-org/openwrt-fchomo.git
 
 popd
 
