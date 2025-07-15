@@ -39,14 +39,7 @@ jobs:
   build:
     runs-on: ubuntu-24.04
 
-    steps:
-    - name: Maximize build space
-      uses: easimon/maximize-build-space@master
-      with:
-        root-reserve-mb: 512
-        swap-size-mb: 1024
-        remove-dotnet: 'true'
-        
+    step:    
     - name: 检查
       uses: actions/checkout@main
 
@@ -112,13 +105,15 @@ jobs:
       if: (!cancelled())
       run: df -hT
       
-    - name: Compile Toolchain
-      if: env.REBUILD_TOOLCHAIN == 'true'
-      id: toolchain
+    - name: 编译工具链
+      id: mtools
       run: |
-        cd $OPENWRT_PATH
-        make toolchain/compile -j$(nproc) || make toolchain/compile -j1 V=s
-        $GITHUB_WORKSPACE/$DIY_SCRIPT
+        cd openwrt
+        make defconfig
+        echo -e "$(($(nproc)+1)) thread compile"
+        make tools/compile -j$(($(nproc)+1)) || make tools/compile -j1 V=s
+        make toolchain/compile -j$(($(nproc)+1)) || make toolchain/compile -j1 V=s
+        echo "status=success" >> $GITHUB_OUTPUT
 
     - name: 空间使用情况3_1
       if: (!cancelled())
