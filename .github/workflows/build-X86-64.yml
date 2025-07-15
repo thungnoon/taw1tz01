@@ -111,16 +111,14 @@ jobs:
     - name: 空间使用情况2
       if: (!cancelled())
       run: df -hT
-
-    - name: 编译工具链
-      id: mtools
+      
+    - name: Compile Toolchain
+      if: env.REBUILD_TOOLCHAIN == 'true'
+      id: toolchain
       run: |
-        cd openwrt
-        make defconfig
-        echo -e "$(($(nproc)+1)) thread compile"
-        make tools/compile -j$(($(nproc)+1)) || make tools/compile -j1 V=s
-        make toolchain/compile -j$(($(nproc)+1)) || make toolchain/compile -j1 V=s
-        echo "status=success" >> $GITHUB_OUTPUT
+        cd $OPENWRT_PATH
+        make toolchain/compile -j$(nproc) || make toolchain/compile -j1 V=s
+        $GITHUB_WORKSPACE/$DIY_SCRIPT
 
     - name: 空间使用情况3_1
       if: (!cancelled())
