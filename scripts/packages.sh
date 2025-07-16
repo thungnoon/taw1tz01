@@ -8,11 +8,9 @@ rm -rf ./feeds/luci/applications/luci-app-mosdns
 #克隆依赖插件
 git clone https://github.com/xiaorouji/openwrt-passwall-packages.git package/pwpage
 
-
 #克隆的源码放在small文件夹
 mkdir package/small
 pushd package/small
-
 
 #adguardhome
 git clone -b 2024.09.05 --depth 1 https://github.com/XiaoBinin/luci-app-adguardhome.git
@@ -58,3 +56,20 @@ git clone -b main --depth 1 https://github.com/nikkinikki-org/OpenWrt-nikki.git
 popd
 
 echo "packages executed successfully!"
+
+# 获取脚本所在目录的绝对路径
+REPO_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+echo "仓库根目录: $REPO_ROOT"
+
+# 使用绝对路径执行
+GOLANG_SCRIPT="$REPO_ROOT/packages_lang_golang.sh"
+
+if [ ! -f "$GOLANG_SCRIPT" ]; then
+    echo "错误: $GOLANG_SCRIPT 不存在!" >&2
+    exit 1
+fi
+
+# 执行脚本
+
+echo "执行 Golang 脚本: $GOLANG_SCRIPT"
+chmod +x "$GOLANG_SCRIPT" || exit 1
