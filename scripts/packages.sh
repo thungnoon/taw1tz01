@@ -33,7 +33,8 @@ git clone -b main --depth 1 https://github.com/gdy666/luci-app-lucky.git
 git clone -b main --depth 1 https://github.com/xiaorouji/openwrt-passwall2.git
 
 # #mosdns
-git clone -b v5 --depth 1 https://github.com/sbwml/luci-app-mosdns.git
+# git clone -b v5 --depth 1 https://github.com/sbwml/luci-app-mosdns.git
+# git clone -b master --depth 1 https://github.com/sbwml/v2ray-geodata.git
 
 # #openclash
 # git clone -b master --depth 1 https://github.com/vernesong/OpenClash.git
