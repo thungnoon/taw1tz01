@@ -56,6 +56,9 @@ git clone -b main --depth 1 https://github.com/nikkinikki-org/OpenWrt-nikki.git
 # #fchomo 
 # git clone -b master --depth 1 https://github.com/fcshark-org/openwrt-fchomo.git
 
+# #rtp2httpd
+git clone -b main --depth 1 https://github.com/stackia/rtp2httpd/tree/main/openwrt-support.git
+
 popd
 
 echo "packages executed successfully!"
