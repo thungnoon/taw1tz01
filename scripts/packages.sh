@@ -54,11 +54,7 @@ git clone -b main --depth 1 https://github.com/linkease/istore-ui.git
 git clone -b main --depth 1 https://github.com/nikkinikki-org/OpenWrt-nikki.git
 
 # #fchomo 
-# git clone -b master --depth 1 https://github.com/fcshark-org/openwrt-fchomo.git
-
-popd
-
-echo "packages executed successfully!"
+# git clone -b master --depth 1 https://github.com/fcshark-org/openwrt-fchomo.g
 
 ##########################################
 # 添加 rtp2httpd 流媒体转发服务器 (feed 模式)
@@ -78,4 +74,9 @@ echo "src-git rtp2httpd https://github.com/stackia/rtp2httpd.git" >> feeds.conf.
 echo "CONFIG_PACKAGE_rtp2httpd=y" >> .config
 echo "CONFIG_PACKAGE_luci-app-rtp2httpd=y" >> .config
 echo "✅ 已启用 rtp2httpd 流媒体转发服务器 (通过 feed 方式集成)"
+
+popd
+
+echo "packages executed successfully!"
+
 
