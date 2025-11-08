@@ -59,3 +59,23 @@ git clone -b main --depth 1 https://github.com/nikkinikki-org/OpenWrt-nikki.git
 popd
 
 echo "packages executed successfully!"
+
+##########################################
+# 添加 rtp2httpd 流媒体转发服务器 (feed 模式)
+##########################################
+
+# 添加 feed 源（可选锁定版本）
+# 使用 main 最新代码：
+echo "src-git rtp2httpd https://github.com/stackia/rtp2httpd.git" >> feeds.conf.default
+# 或者固定版本（推荐稳定）：
+# echo "src-git rtp2httpd https://github.com/stackia/rtp2httpd.git;v3.1.1" >> feeds.conf.default
+
+# 更新并安装 rtp2httpd feed
+./scripts/feeds update rtp2httpd
+./scripts/feeds install -a -p rtp2httpd
+
+# 启用 luci-app-rtp2httpd 与主程序 rtp2httpd
+echo "CONFIG_PACKAGE_rtp2httpd=y" >> .config
+echo "CONFIG_PACKAGE_luci-app-rtp2httpd=y" >> .config
+echo "✅ 已启用 rtp2httpd 流媒体转发服务器 (通过 feed 方式集成)"
+
