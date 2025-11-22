@@ -15,14 +15,6 @@ git clone https://github.com/sbwml/packages_lang_golang -b 24.x feeds/packages/l
 mkdir package/small
 pushd package/small
 
-# 添加rtp2httpd
-merge_folder main https://github.com/stackia/rtp2httpd package openwrt-support/rtp2httpd openwrt-support/luci-app-rtp2httpd
-rm -f package/rtp2httpd/Makefile
-curl -s https://raw.githubusercontent.com/smdx/rtp2httpd/refs/heads/main/Makefile > package/rtp2httpd/Makefile
-echo "" >> .config  # 添加一个空行(确保正确换行)
-echo "CONFIG_PACKAGE_luci-app-rtp2httpd=y" >> .config
-echo "CONFIG_PACKAGE_rtp2httpd=y" >> .config
-
 #adguardhome
 git clone -b 2024.09.05 --depth 1 https://github.com/XiaoBinin/luci-app-adguardhome.git
 
