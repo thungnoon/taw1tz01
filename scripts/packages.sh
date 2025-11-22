@@ -57,8 +57,7 @@ git clone -b main --depth 1 https://github.com/nikkinikki-org/OpenWrt-nikki.git
 # git clone -b master --depth 1 https://github.com/fcshark-org/openwrt-fchomo.git
 
 # #rtp2httpd
-git clone -b main --depth 1 https://github.com/stackia/rtp2httpd/tree/main/openwrt-support/rtp2httpd.git
-git clone -b main --depth 1 https://github.com/stackia/rtp2httpd/tree/main/openwrt-support/luci-app-rtp2httpd.git
+git clone -b main --depth 1 https://github.com/stackia/rtp2httpd/tree/main/openwrt-support.git
 
 popd
 
