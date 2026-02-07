@@ -159,8 +159,11 @@ jobs:
       run: |
         [ -d files ] && mv files openwrt/files || echo "files not found"
         [ -f $PLATFORM_FILE ] && cat $PLATFORM_FILE >> openwrt/.config
-        [ -f $CONFIG_FILE ] && cat $CONFIG_FILE >> openwrt/.config
+        [ -f $CONFIG_FILE ] && cat $CONFIG_FILE >> openwrt/.config 
+        rm -rf openwrt/feeds/packages/lang/rust
+        cp -r patches/rust openwrt/feeds/packages/lang/
         cd openwrt
+        ls -l feeds/packages/lang/ | grep rust
         chmod +x $GITHUB_WORKSPACE/$SETTINGS_SH && $GITHUB_WORKSPACE/$SETTINGS_SH
         chmod +x $GITHUB_WORKSPACE/$PACKAGES_SH && $GITHUB_WORKSPACE/$PACKAGES_SH
         chmod +x $GITHUB_WORKSPACE/$CLASH_CORE_SH && $GITHUB_WORKSPACE/$CLASH_CORE_SH
