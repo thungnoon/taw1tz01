@@ -80,6 +80,12 @@ git clone -b main --depth 1 https://github.com/nikkinikki-org/OpenWrt-momo.git
 # daed
 git clone -b master --depth 1 https://github.com/QiuSimons/luci-app-daed.git
 
+# rtp2httpd
+git clone -b main --depth 1 https://github.com/stackia/rtp2httpd/rtp2httpd.git
+git clone -b main --depth 1 https://github.com/stackia/rtp2httpd/luci-app-rtp2httpd.git
+
+
+
 popd
 
 echo "packages executed successfully!"
