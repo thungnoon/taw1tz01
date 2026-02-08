@@ -59,7 +59,7 @@ git clone -b master --depth 1 https://github.com/sirpdboy/luci-app-netspeedtest.
 # git clone -b master --depth 1 https://github.com/vernesong/OpenClash.git
 
 # #poweroffdevice
-git clone -b js --depth 1 https://github.com/sirpdboy/luci-app-poweroffdevice.git
+git clone -b master --depth 1 https://github.com/sirpdboy/luci-app-poweroffdevice.git
 
 # #partexp
 git clone -b main --depth 1 https://github.com/sirpdboy/luci-app-partexp.git
