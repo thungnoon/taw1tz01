@@ -5,7 +5,7 @@ rm -rf feeds/packages/lang/golang
 rm -rf feeds/packages/net/{geoview,chinadns-ng,hysteria,mosdns,v2ray-geodata}
 rm -rf feeds/packages/net/{shadowsocks-libev,shadowsocks-rust,shadowsocksr-libev}
 rm -rf feeds/packages/net/{sing-box,v2ray-geodata,v2ray-plugin,xray-core}
-rm -rf feeds/luci/applications/{luci-app-mosdns,luci-app-passwall}
+rm -rf feeds/luci/applications/{luci-app-mosdns,luci-app-passwall,luci-app-homeproxy}
 
 #克隆依赖插件
 git clone --depth 1 https://github.com/Openwrt-Passwall/openwrt-passwall-packages.git package/pwpage
@@ -74,6 +74,9 @@ git clone -b main --depth 1 https://github.com/nikkinikki-org/OpenWrt-momo.git
 
 # daed
 git clone -b master --depth 1 https://github.com/QiuSimons/luci-app-daed.git
+
+# homeproxy
+git clone -b main --depth 1 https://github.com/lxiaya/openwrt-homeproxy.git
 
 # rtp2httpd
 git clone -b main --depth 1 https://github.com/stackia/rtp2httpd.git
