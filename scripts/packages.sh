@@ -76,7 +76,7 @@ git clone -b main --depth 1 https://github.com/nikkinikki-org/OpenWrt-momo.git
 git clone -b master --depth 1 https://github.com/QiuSimons/luci-app-daed.git
 
 # homeproxy
-git clone -b main --depth 1 https://github.com/lxiaya/openwrt-homeproxy.git
+# git clone -b main --depth 1 https://github.com/lxiaya/openwrt-homeproxy.git
 
 # rtp2httpd
 git clone -b main --depth 1 https://github.com/stackia/rtp2httpd.git
