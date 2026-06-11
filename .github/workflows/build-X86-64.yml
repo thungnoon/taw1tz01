@@ -40,10 +40,10 @@ env:
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
     - name: 检查代码
       uses: actions/checkout@main
-
 
     - name: 初始化环境
       env:
@@ -57,6 +57,8 @@ jobs:
         sudo rm -rf /var/lib/apt/lists/*
         # 设置时区
         sudo timedatectl set-timezone "$TZ"
+        sudo mkdir -p /workdir
+        sudo chown $USER:$GROUPS /workdir
 
     - name: 检查空间使用情况（清理情况）
       if: (!cancelled())
@@ -71,10 +73,10 @@ jobs:
         cd ./openwrt/ && echo "WRT_HASH=$(git log -1 --pretty=format:'%h')" >> $GITHUB_ENV
 
         # GitHub Action 移除国内下载源
-        # PROJECT_MIRRORS_FILE="./scripts/projectsmirrors.json"
-        # if [ -f "$PROJECT_MIRRORS_FILE" ]; then
-        #   sed -i '/.cn\//d; /tencent/d; /aliyun/d' "$PROJECT_MIRRORS_FILE"
-        # fi
+        PROJECT_MIRRORS_FILE="./scripts/projectsmirrors.json"
+        if [ -f "$PROJECT_MIRRORS_FILE" ]; then
+          sed -i '/.cn\//d; /tencent/d; /aliyun/d' "$PROJECT_MIRRORS_FILE"
+        fi
 
     - name: 检查缓存
       id: check-cache
