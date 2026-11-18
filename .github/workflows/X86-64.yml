@@ -29,5 +29,4 @@ jobs:
       clash_core: amd64
       rust: true
       golang: true
-      with_5g: true
       build_mode: single
