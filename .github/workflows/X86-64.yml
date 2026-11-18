@@ -25,7 +25,7 @@ jobs:
     with:
       platform: x86-64
       branch: openwrt-25.12
-      configs: configs/Target-X86.txt,configs/Packages.txt,configs/Packages-5G.txt
+      configs: configs/Target-X86.txt,configs/Packages.txt
       clash_core: amd64
       rust: true
       golang: true
