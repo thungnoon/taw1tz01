@@ -90,7 +90,7 @@ esac
   if [ -n "${KERNEL_VERSION:-}" ]; then
     echo "- 内核版本：\`${KERNEL_VERSION}\`"
   fi
-  echo "- 默认 IP：\`192.168.8.1\`"
+  echo "- 默认 IP：\`192.168.5.1\`"
   echo "- 构建时间：$(date '+%Y-%m-%d %H:%M %Z')（run #${GITHUB_RUN_NUMBER}）"
   echo
   echo "> 产物已去掉平台前缀，校验和见 \`sha256sums\`。"
