@@ -21,8 +21,7 @@ cd "${TARGET_DIRS[0]}"
 echo "==> 产物目录: $PWD"
 
 # 1. 不需要上传的东西
-rm -f ./*.buildinfo ./*.json ./*.manifest ./*.vmdk ./*rootfs.img.gz ./*combined.img.gz 
-rm -rf sha256sums
+rm -f ./*.buildinfo ./*.json ./*.manifest ./*.vmdk ./*rootfs.img.gz ./*combined.img.gz ./sha256sums
 rm -rf ./packages
 
 # 2. 按平台决定保留哪些文件、去掉哪个文件名前缀
