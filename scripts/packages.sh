@@ -31,22 +31,22 @@ pushd package/small > /dev/null
 # clone https://github.com/pymumu/luci-app-smartdns.git luci-app-smartdns -b master
 # clone https://github.com/VIKINGYFY/packages.git VIKINGYFY-packages -b main
 clone https://github.com/Openwrt-Passwall/openwrt-passwall.git luci-app-passwall -b main
-clone https://github.com/Openwrt-Passwall/openwrt-passwall2.git luci-app-passwall2 -b main
-clone https://github.com/sbwml/luci-app-mosdns.git luci-app-mosdns -b v5
+# clone https://github.com/Openwrt-Passwall/openwrt-passwall2.git luci-app-passwall2 -b main
+# clone https://github.com/sbwml/luci-app-mosdns.git luci-app-mosdns -b v5
 # clone https://github.com/muink/luci-app-netspeedtest.git luci-app-netspeedtest -b master
-clone https://github.com/nikkinikki-org/OpenWrt-nikki.git luci-app-nikki -b main
+# clone https://github.com/nikkinikki-org/OpenWrt-nikki.git luci-app-nikki -b main
 # clone https://github.com/nikkinikki-org/OpenWrt-momo.git luci-app-momo -b main
-clone https://github.com/QiuSimons/luci-app-daed.git luci-app-daed -b master
+# clone https://github.com/QiuSimons/luci-app-daed.git luci-app-daed -b master
 
 clone https://github.com/sirpdboy/luci-app-partexp.git luci-app-partexp -b main
 clone https://github.com/sirpdboy/luci-app-poweroffdevice.git luci-app-poweroffdevice -b master
-
+clone https://github.com/kenzok8/openwrt-honk.git luci-app-honk -b main
 
 # 流量监控（luci 前端 + bandix 核心包；核心是预编译二进制，按架构从 release 下载）
-clone https://github.com/timsaya/luci-app-bandix.git luci-app-bandix -b main
-clone https://github.com/timsaya/openwrt-bandix.git openwrt-bandix -b main
+# clone https://github.com/timsaya/luci-app-bandix.git luci-app-bandix -b main
+# clone https://github.com/timsaya/openwrt-bandix.git openwrt-bandix -b main
 # 网盘（alist 的继任者，取代已失效的 aliyundrive-webdav）
-clone https://github.com/sbwml/luci-app-openlist2.git luci-app-openlist2 -b main
+# clone https://github.com/sbwml/luci-app-openlist2.git luci-app-openlist2 -b main
 
 popd > /dev/null
 
