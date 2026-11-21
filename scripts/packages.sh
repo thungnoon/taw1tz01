@@ -40,7 +40,7 @@ clone https://github.com/Openwrt-Passwall/openwrt-passwall.git luci-app-passwall
 
 clone https://github.com/sirpdboy/luci-app-partexp.git luci-app-partexp -b main
 clone https://github.com/sirpdboy/luci-app-poweroffdevice.git luci-app-poweroffdevice -b master
-clone https://github.com/kenzok8/openwrt-honk.git luci-app-honk -b main
+clone https://github.com/QiuSimons/luci-app-honk.git luci-app-honk -b master
 
 # 流量监控（luci 前端 + bandix 核心包；核心是预编译二进制，按架构从 release 下载）
 # clone https://github.com/timsaya/luci-app-bandix.git luci-app-bandix -b main
