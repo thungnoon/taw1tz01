@@ -81,7 +81,7 @@ jobs:
         run: |
           set -euo pipefail
           echo "week=$(date +%Y-W%V)" >> "$GITHUB_OUTPUT"
-          echo "release_tag=$(date +%Y.%m.%d)-${BRANCH#*-}_${{ inputs.platform }}-r${GITHUB_RUN_NUMBER}" >> "$GITHUB_OUTPUT"
+          echo "release_tag=$(date +%Y.%m.%d)-${BRANCH#*-}_${{ inputs.platform }}" >> "$GITHUB_OUTPUT"
 
       - name: 构建参数
         run: |
